@@ -19,7 +19,7 @@ const RestaurantCard = ({ resData }) => {
         <span>{cuisines.join(", ")}</span>
         <div className="rating-time">
           <span className="rating">{avgRating} stars</span>
-          <span className="time">{sla.deliveryTime} min.</span>
+
         </div>
       </div>
     );

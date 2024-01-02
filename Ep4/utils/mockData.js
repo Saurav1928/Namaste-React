@@ -1,4 +1,3 @@
-
 const resObj = [
     {
       info: {
@@ -10,55 +9,8 @@ const resObj = [
         costForTwo: "₹400 for two",
         cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
         avgRating: 4.2,
-        parentId: "630",
-        avgRatingString: "4.2",
-        totalRatingsString: "100+",
-        sla: {
-          deliveryTime: 17,
-          lastMileTravel: 1.9,
-          serviceability: "SERVICEABLE",
-          slaString: "17 mins",
-          lastMileTravelString: "1.9 km",
-          iconType: "ICON_TYPE_EMPTY",
-        },
-        availability: {
-          nextCloseTime: "2024-01-01 22:45:00",
-          opened: true,
-        },
-        badges: {},
-        isOpen: true,
-        type: "F",
-        badgesV2: {
-          entityBadges: {
-            imageBased: {},
-            textBased: {},
-            textExtendedBadges: {},
-          },
-        },
-        aggregatedDiscountInfoV3: {
-          header: "₹120 OFF",
-          subHeader: "ABOVE ₹199",
-          discountTag: "FLAT DEAL",
-        },
-        differentiatedUi: {
-          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-          differentiatedUiMediaDetails: {
-            mediaType: "ADS_MEDIA_ENUM_IMAGE",
-            lottie: {},
-            video: {},
-          },
-        },
-        reviewsSummary: {},
-        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-        isNewlyOnboarded: true,
-        restaurantOfferPresentationInfo: {},
-      },
-      analytics: {},
-      cta: {
-        link: "https://www.swiggy.com/restaurants/mcdonalds-vishrambag-sangli-sangli-771970",
-        type: "WEBLINK",
-      },
     },
+  },
     {
       info: {
         id: "304292",

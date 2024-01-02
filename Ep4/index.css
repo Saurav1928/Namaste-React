@@ -38,8 +38,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     gap: 5px;
-
-
 }
 
 
@@ -77,4 +75,13 @@
 
 .time {
     background-color: yellow;
+}
+.top-rated-btn {
+    margin: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.top-rated-btn:hover {
+    background-color: rgb(0, 180, 252);
 }
