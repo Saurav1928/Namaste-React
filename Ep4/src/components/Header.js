@@ -11,6 +11,7 @@ const [login, setLogin] = useState('Login')
 //   console.log('Use effect callled...')
 // })
 
+
   return (
     <div className='header'>
       <div className='logo-container'>
@@ -18,31 +19,27 @@ const [login, setLogin] = useState('Login')
       </div>
       <div className='nav-items'>
         <ul>
-          {/* <li>
-            <Link to="/">Home</Link>
-          </li> */}
-          {/* <li>
-            <Link to="/about">About us</Link>
-          </li>
           <li>
-            <Link to="/contact">Contact Us</Link>
-          </li> */}
+            <Link to='/'>Home</Link>
+          </li>
 
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-
-          <li>Cart</li>
-;<button
-  className='login-btn'
-  onClick={() => {
-    if (login == 'Login') setLogin('Logout')
-    else setLogin('Login')
-  }}
->
-  {login}
-</button>
-
+          <li>
+            <Link to='/about'>About</Link>
+          </li>
+          ;
+          <li>
+            <Link to='/contact'>Contact</Link>
+          </li>
+          ;<li>Cart</li>;
+          <button
+            className='login-btn'
+            onClick={() => {
+              if (login == 'Login') setLogin('Logout')
+              else setLogin('Login')
+            }}
+          >
+            {login}
+          </button>
         </ul>
       </div>
     </div>
