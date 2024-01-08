@@ -14,18 +14,25 @@ import React from "react"
 class About extends React.Component {
   constructor(props) {
     super(props)
-    console.log("parent constructor")
+    // console.log("parent constructor")
   }
   componentDidMount() {
-    console.log("parent component did mount")
+    // console.log("parent component did mount")
   }
   render() {
-    console.log("Parent render")
+    // console.log("Parent render")
     return (
       <div>
         <h1>About</h1>
-        <UserClass name="First" age="21" msg="Class Based component" />
-        <UserClass name="Second" age="21" msg="Class Based component" />
+        <UserClass
+          name="First"
+          Location="Yavatmal"
+          Bio="TYIT Student"
+          age="21"
+          msg="Class Based component"
+          contact="sauravfarkade9191@gmail.com"
+        />
+        {/* <UserClass name="Second" age="21" msg="Class Based component" /> */}
       </div>
     )
   }
