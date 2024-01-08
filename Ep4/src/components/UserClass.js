@@ -18,20 +18,27 @@
 // export default UserClass
 
 import React from "react"
+import Practice from "./Practice"
 
 class UserClass extends React.Component {
   constructor(props) {
     super(props)
+    console.log(this.props.name + "child constructor")
     this.state = {
       count1: 0,
     }
   }
+  componentDidMount() {
+    console.log(this.props.name + " child component did mount")
+  }
   render() {
+    console.log(this.props.name + "child render")
     // console.log(this.state.count1)
     return (
       <div className="user-card">
         <h1>Name: {this.props.name} </h1>
         <h2>Count1: {this.state.count1}</h2>
+
         <div>
           <button
             className="myBtn"
@@ -47,6 +54,7 @@ class UserClass extends React.Component {
             Inc
           </button>
         </div>
+        <Practice name={this.props.name} />
       </div>
     )
   }
