@@ -6,7 +6,7 @@ const RestaurantCard = ({ resData }) => {
   const { cloudinaryImageId, name, cuisines, avgRating, sla, costForTwo } =
     resData?.info
   const { deliveryTime } = sla
-  console.log(resData?.info)
+  // console.log(resData?.info)
   return (
     <div className="m-4 p-4 w-[16rem] bg-slate-300 rounded-lg flex flex-col gap-2">
       <img

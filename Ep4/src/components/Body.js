@@ -19,10 +19,10 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(RES_URL)
     const json = await data.json()
-    console.log("json: ", json)
+    // console.log("json: ", json)
     const resp =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    console.log(resp)
+    // console.log(resp)
     setResList(resp)
     setFilteredRes(resp)
   }
