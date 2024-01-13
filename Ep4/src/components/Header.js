@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { LOGO_URL } from "../../utils/constants"
+import UserContext from "../../utils/UserContext"
 // import useOnlineStatus from "../../utils/useOnlineStatus"
 
 // let times = 1
 
 const Header = () => {
   const [login, setLogin] = useState("Login")
-  // console.log('Header rendered for ', times++, ' times ')
-  // useEffect(() => {
-  //   console.log('Use effect callled...')
-  // })
-
-  // const onlineStatus = useOnlineStatus()
+  const { loggedInUser } = useContext(UserContext)
+  console.log(loggedInUser)
   return (
     <div className="flex justify-between p-5 border border-solid text-lg items-center text-yellow-100 ">
       <div className="logo-container">
@@ -51,6 +48,7 @@ const Header = () => {
           >
             {login}
           </button>
+          <li className="underline">{loggedInUser}</li>
         </ul>
       </div>
     </div>

@@ -1,10 +1,10 @@
 import RestaurantCard, { RestaurantCardWithVeg } from "./RestaurantCard"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
 import { RES_URL } from "../../utils/constants"
-
+import UserContext from "../../utils/UserContext"
 function checkRatings(restaurent) {
   return restaurent.info.avgRating >= 4.5
 }
@@ -13,6 +13,7 @@ const Body = () => {
   const [resList, setResList] = useState([])
   const [searchText, setSearchText] = useState("")
   const [filteredRes, setFilteredRes] = useState(resList)
+  const { setUserName, loggedInUser } = useContext(UserContext)
   useEffect(() => {
     fetchData()
   }, [])
@@ -50,6 +51,7 @@ const Body = () => {
               setFilteredRes(searchedList)
             }}
           ></input>
+
           <button
             className=" bg-yellow-300 px-2 rounded-md "
             onClick={() => {
@@ -72,6 +74,14 @@ const Body = () => {
           >
             Top Rated
           </button>
+          <input
+            className="border border-black p-2"
+            placeholder="Name.."
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value)
+            }}
+          ></input>
         </div>
       </div>
       <div className="m-4 p-4 flex flex-wrap justify-center">

@@ -7,7 +7,7 @@ const ItemList = (props) => {
   return (
     <div>
       <div>
-        {itemcard.map((item) => (
+        {itemcard?.map((item) => (
           <Item item={item} />
         ))}
       </div>

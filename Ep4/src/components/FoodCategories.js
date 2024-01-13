@@ -1,13 +1,14 @@
 import { useState } from "react"
 import ItemList from "./ItemList"
 
-const FoodCategories = (props) => {
-  const [showItems, setShowItems] = useState(false)
+const FoodCategories = ({ data, showItems, setShowIndex }) => {
+  // console.log("hello from Food categories..")
+
   const clickHandler = () => {
-    setShowItems(!showItems)
+    setShowIndex()
   }
   // console.log(props)
-  const { title, itemCards } = props?.card?.card
+  const { title, itemCards } = data
   return (
     <div className="bg-slate-200 mx-auto my-4 w-6/12 p-4 shadow-lg   rounded-md ">
       {/* Header */}
@@ -16,7 +17,7 @@ const FoodCategories = (props) => {
         onClick={clickHandler}
       >
         <span className="text-lg">
-          {title} ({itemCards.length})
+          {title} ({itemCards?.length})
         </span>
         <span>⬇️</span>
       </div>

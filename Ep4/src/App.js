@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react"
+import React, { lazy, Suspense, useEffect, useState } from "react"
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header"
 import Body from "./components/Body"
@@ -14,20 +14,31 @@ import About from "./components/About"
 import Contact from "./components/Contact"
 import Error from "./components/Error"
 import RestaurantMenu from "./components/RestaurantMenu"
+import UserContext from "../utils/UserContext"
 // import SwiggyMart from "./components/SwiggyMart"
 // import useOnlineStatus from "../utils/useOnlineStatus"
 // import Grocery from "./components/Grocery"
 
 const Swiggy = lazy(() => import("./components/Swiggy"))
 const Grocery = lazy(() => import("./components/Grocery"))
+
 const AppLayout = () => {
+  const [userName, setUserName] = useState("Default Name")
+  useEffect(() => {
+    const data = {
+      name: "Saurav",
+    }
+    setUserName(data.name)
+  }, [])
   // const onlineStatus = useOnlineStatus()
   // if (onlineStatus == false) return <h2>Network Lost! Please check the connection!</h2>
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   )
 }
 
