@@ -24,4 +24,27 @@ const RestaurantCard = ({ resData }) => {
   )
 }
 
+// export const RestaurantCardWithVeg = (RestaurantCard) => {
+//   return (props) => {
+//     return (
+//       <div>
+//         {console.log("Hello from veg")}
+//         <label className="bg-black text-white font-extrabold">veg</label>
+//         <RestaurantCard {...props} />
+//       </div>
+//     )
+//   }
+// }
+
+export const RestaurantCardWithVeg = ({ RestaurantCard, ...props }) => {
+  return (
+    <div>
+
+      <label className="bg-green-600 text-white font-extrabold absolute px-2 m-2 rounded-md  ">Veg</label>
+      <RestaurantCard resData={props.resData} />
+    </div>
+  );
+};
+
+
 export default RestaurantCard

@@ -1,10 +1,10 @@
-import RestaurantCard from "./RestaurantCard"
-// import resObj from "../../utils/mockData";
+import RestaurantCard, { RestaurantCardWithVeg } from "./RestaurantCard"
+
 import { useState, useEffect } from "react"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
 import { RES_URL } from "../../utils/constants"
-// import useOnlineStatus from "../../utils/useOnlineStatus"
+
 function checkRatings(restaurent) {
   return restaurent.info.avgRating >= 4.5
 }
@@ -19,23 +19,18 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(RES_URL)
     const json = await data.json()
-    // console.log("json: ", json)
+
     const resp =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     // console.log(resp)
     setResList(resp)
     setFilteredRes(resp)
   }
-  // console.log("Body renders")
 
   if (resList?.length === 0) {
-    // console.log("Hii")
     return <Shimmer />
   }
 
-  // const onlineStatus = useOnlineStatus()
-  // if (onlineStatus == false) return <h1>You are offline!</h1>
-  // if (resList.length === 0) return <Shimmer />
   return (
     <div className="body">
       <div className="filter">
@@ -59,9 +54,10 @@ const Body = () => {
             className=" bg-yellow-300 px-2 rounded-md "
             onClick={() => {
               const searchedList = resList.filter((res) =>
-                res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
+                res?.info?.name
+                  ?.toLowerCase()
+                  ?.includes(searchText.toLowerCase())
               )
-              //  console.log(searchedList);
               setFilteredRes(searchedList)
             }}
           >
@@ -79,15 +75,21 @@ const Body = () => {
         </div>
       </div>
       <div className="m-4 p-4 flex flex-wrap justify-center">
-        {/* {resObj.map((x) => (
-            <RestaurantCard resData={x} />
-          ))} */}
         {filteredRes.map((restaurent) => (
           <Link
             key={restaurent.info.id}
             to={"/restaurant/" + restaurent.info.id}
           >
-            <RestaurantCard resData={restaurent} />
+            {restaurent &&
+            restaurent.info &&
+            restaurent.info.veg !== undefined ? (
+              <RestaurantCardWithVeg
+                RestaurantCard={RestaurantCard}
+                resData={restaurent}
+              />
+            ) : (
+              <RestaurantCard resData={restaurent} />
+            )}
           </Link>
         ))}
       </div>
