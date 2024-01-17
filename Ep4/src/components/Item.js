@@ -1,8 +1,12 @@
+import { useDispatch } from "react-redux"
+import { addItem } from "../../utils/cartSlice"
 const Item = (props) => {
   // console.log("Items..")
-
+  const dispatch = useDispatch()
   const { info } = props?.item?.card
+  const addItemHandler = (props) => {}
   // console.log(info)
+  dispatch(addItem(props.item.card.info.name))
   return (
     <div className="flex justify-between shadow-lg py-2 my-4 rounded-md border-b-4">
       <div className=" flex flex-col text-left p-2 w-9/12">
@@ -17,6 +21,12 @@ const Item = (props) => {
             info?.imageId
           }
         ></img>
+        <button
+          className="bg-black px-4 py-2 text-white rounded-lg hover:bg-white hover:text-black "
+          onClick={() => addItemHandler(props)}
+        >
+          Add+
+        </button>
       </div>
     </div>
   )

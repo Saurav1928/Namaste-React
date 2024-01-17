@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { LOGO_URL } from "../../utils/constants"
 import UserContext from "../../utils/UserContext"
+import { useSelector } from "react-redux"
 // import useOnlineStatus from "../../utils/useOnlineStatus"
 
 // let times = 1
@@ -9,7 +10,8 @@ import UserContext from "../../utils/UserContext"
 const Header = () => {
   const [login, setLogin] = useState("Login")
   const { loggedInUser } = useContext(UserContext)
-  console.log(loggedInUser)
+  // console.log(loggedInUser)
+  const cartItems = useSelector((store) => store.cart.items) // subscirbing to items using selector
   return (
     <div className="flex justify-between p-5 border border-solid text-lg items-center text-yellow-100 ">
       <div className="logo-container">
@@ -38,7 +40,7 @@ const Header = () => {
             {" "}
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
+          <li>Cart - {cartItems.length} items</li>
           <button
             className="login-btn"
             onClick={() => {

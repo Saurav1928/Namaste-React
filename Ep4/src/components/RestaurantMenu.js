@@ -11,6 +11,7 @@ function myfun(item) {
     "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   )
 }
+
 const RestaurantMenu = () => {
   const [showIndex, setShowIndex] = useState(null)
   const { resId } = useParams()

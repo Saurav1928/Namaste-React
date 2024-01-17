@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"
 import Header from "./components/Header"
 import Body from "./components/Body"
 import RestaurantMenu from "./components/RestaurantMenu"
-
+import { Provider } from "react-redux"
 import {
   createBrowserRouter,
   Outlet,
@@ -15,6 +15,7 @@ import Contact from "./components/Contact"
 import Error from "./components/Error"
 import RestaurantMenu from "./components/RestaurantMenu"
 import UserContext from "../utils/UserContext"
+import appStore from "../utils/appStore"
 // import SwiggyMart from "./components/SwiggyMart"
 // import useOnlineStatus from "../utils/useOnlineStatus"
 // import Grocery from "./components/Grocery"
@@ -33,12 +34,14 @@ const AppLayout = () => {
   // const onlineStatus = useOnlineStatus()
   // if (onlineStatus == false) return <h2>Network Lost! Please check the connection!</h2>
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   )
 }
 
