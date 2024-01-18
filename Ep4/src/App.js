@@ -16,6 +16,7 @@ import Error from "./components/Error"
 import RestaurantMenu from "./components/RestaurantMenu"
 import UserContext from "../utils/UserContext"
 import appStore from "../utils/appStore"
+import Cart from "./components/Cart"
 // import SwiggyMart from "./components/SwiggyMart"
 // import useOnlineStatus from "../utils/useOnlineStatus"
 // import Grocery from "./components/Grocery"
@@ -65,6 +66,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/swiggy",

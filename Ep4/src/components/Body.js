@@ -13,7 +13,8 @@ const Body = () => {
   const [resList, setResList] = useState([])
   const [searchText, setSearchText] = useState("")
   const [filteredRes, setFilteredRes] = useState(resList)
-  const { setUserName, loggedInUser } = useContext(UserContext)
+  const { setUserName, loggedInUser } = useContext(UserContext) // must use {} and not []
+
   useEffect(() => {
     fetchData()
   }, [])
@@ -82,6 +83,7 @@ const Body = () => {
               setUserName(e.target.value)
             }}
           ></input>
+          <input className="border border-black"></input>
         </div>
       </div>
       <div className="m-4 p-4 flex flex-wrap justify-center">

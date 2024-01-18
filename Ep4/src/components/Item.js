@@ -4,9 +4,11 @@ const Item = (props) => {
   // console.log("Items..")
   const dispatch = useDispatch()
   const { info } = props?.item?.card
-  const addItemHandler = (props) => {}
+  const addItemHandler = (props) => {
+    dispatch(addItem(props.item.card.info))
+  }
   // console.log(info)
-  dispatch(addItem(props.item.card.info.name))
+
   return (
     <div className="flex justify-between shadow-lg py-2 my-4 rounded-md border-b-4">
       <div className=" flex flex-col text-left p-2 w-9/12">

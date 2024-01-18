@@ -1,6 +1,7 @@
 import User from "./User"
 import UserClass from "./UserClass"
 import React from "react"
+import UserContext from "../../utils/UserContext"
 // const About = () => {
 //   return (
 //     <div>
@@ -32,6 +33,11 @@ class About extends React.Component {
           msg="Class Based component"
           contact="sauravfarkade9191@gmail.com"
         />
+        <div>
+          <UserContext.Consumer>
+            {(myUserContext) => <h1>User: {myUserContext.loggedInUser}</h1>}
+          </UserContext.Consumer>
+        </div>
         {/* <UserClass name="Second" age="21" msg="Class Based component" /> */}
       </div>
     )

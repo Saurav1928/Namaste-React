@@ -21,11 +21,11 @@ class UserClass extends React.Component {
     })
   }
   componentWillUnmount() {
-    console.log("Component unmounting")
+    // console.log("Component unmounting")
   }
   render() {
     // const { name, age, msg } = this.props
-    console.log(this.state.userInfo.name)
+    // console.log(this.state.userInfo.name)
     const { name, location, bio, login } = this.state.userInfo
     return (
       <div className="user-card">
