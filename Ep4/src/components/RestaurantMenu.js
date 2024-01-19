@@ -27,7 +27,7 @@ const RestaurantMenu = () => {
   // resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.filter()
   let categories =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(myfun)
-  // console.log(categories)
+  console.log(categories)
 
   return (
     <div className="text-center">

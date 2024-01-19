@@ -3,15 +3,16 @@ const ItemList = (props) => {
   // console.log(props.itemcard)
   //   console.log(props.itemcard[0].card.info.name)
   const { itemcard } = props
-console.log(itemcard)
-return (
-  <div>
+  // console.log(itemcard)
+  // console.log(itemcard)
+  return (
     <div>
-      {itemcard?.map((item) => (
-        <Item key={item.card.info.id} item={item} />
-      ))}
+      <div>
+        {itemcard?.map((item) => (
+          <Item key={item.card.info.id} item={item} />
+        ))}
+      </div>
     </div>
-  </div>
-)
+  )
 }
 export default ItemList

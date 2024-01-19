@@ -24,7 +24,7 @@ const Body = () => {
 
     const resp =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    // console.log(resp)
+    console.log(resp)
     setResList(resp)
     setFilteredRes(resp)
   }
